@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "k-sunako", email = "dd.kazumasa@gmail.com"},
 ]
-dependencies = []
+dependencies = ["numpy>=2.3.2", "scipy>=1.16.1", "python-lsp-server[all]>=1.13.0"]
 requires-python = "==3.13.*"
 readme = "README.md"
 license = {text = "MIT"}
