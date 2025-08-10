@@ -1,0 +1,5 @@
+* 概要
+
+書籍：[[https://www.morikita.co.jp/books/mid/081712][誤り訂正符号入門]] の演習を行なう。
+
+
