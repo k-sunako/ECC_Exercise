@@ -13,3 +13,6 @@ A = np.block([
     [I_hat, I_hat, I_hat, J]])
 
 G = np.block([np.eye(16, dtype=np.int32), A])
+
+H = np.block([-A.T, np.eye(16)])
+print(H)
