@@ -44,7 +44,16 @@ for tp_ind in itertools.combinations(range(n), 3):
     s = (H @ e.T) % 2
     syns[tuple(s.tolist())] = e
 
-for _ in range(10):
+N = 100000
+n_cant_decode = 0
+p = 0.01
+for _ in range(N):
     u = np.random.randint(0, 2, k, dtype=np.int32)
     c = (u @ G) % 2
     np.testing.assert_array_equal((H @ c.T) % 2, np.zeros(k, dtype=np.int32))
+    e = np.where(np.random.uniform(0.0, 1.0, n) < p, 1, 0)
+    r = c + e
+    s = (H @ r.T) % 2
+    if tuple(s.tolist()) not in syns:
+        n_cant_decode += 1
+print(n_cant_decode / N)
